@@ -1,3 +1,5 @@
+[English 🇬🇧](https://github.com/Choucroute-melba/usb-utils/blob/master/readme.md)
+
 # usb-utils : Un kit d'outils minimaliste pour les communications en série avec arduino
 
 - **CommandLine :** Une class pour analyser facilement des lignes de commandes de la forme suivante :
