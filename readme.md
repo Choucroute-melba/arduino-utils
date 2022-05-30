@@ -1,3 +1,5 @@
+[Français 🇨🇵](https://github.com/Choucroute-melba/usb-utils/blob/master/readme-fr.md)
+
 # usb-utils : A little toolset for Serial communication with Arduino
 
 - **CommandLine :** A simple class to parse formated commands from a string with the following format : 
