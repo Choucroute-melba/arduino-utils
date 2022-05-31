@@ -2,6 +2,17 @@
 
 // init the content of the buffer
 SerialBuffer::SerialBuffer()
+  : m_serial(NULL)
+{
+  content = (byte *) malloc(sizeof(byte));
+  if(content == NULL)
+    size = -1;
+  else
+    size = 0;
+}
+
+SerialBuffer::SerialBuffer(SoftwareSerial * serial)
+  : m_serial(serial)
 {
   content = (byte *) malloc(sizeof(byte));
   if(content == NULL)
@@ -21,7 +32,17 @@ void SerialBuffer::tick()
 {
   if(size == -1)
     return;
-  if(Serial.available())
+  
+  if(m_serial != NULL)
+  {
+    if(m_serial->available())
+    {
+    content[size] = m_serial.read();
+    size++;
+    content = (byte *) realloc(content, sizeof(byte) * (size + 1));
+    }
+  }
+  else if(Serial.available())
   {
     content[size] = Serial.read();
     size++;
