@@ -37,9 +37,9 @@ void SerialBuffer::tick()
   {
     if(m_serial->available())
     {
-    content[size] = m_serial.read();
-    size++;
-    content = (byte *) realloc(content, sizeof(byte) * (size + 1));
+      content[size] = m_serial->read();
+      size++;
+      content = (byte *) realloc(content, sizeof(byte) * (size + 1));
     }
   }
   else if(Serial.available())
