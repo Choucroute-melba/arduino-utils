@@ -1,4 +1,4 @@
-#include "UsbInterface.h"
+#include "SerialBuffer.h"
 
 // init the content of the buffer
 SerialBuffer::SerialBuffer()
