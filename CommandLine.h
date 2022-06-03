@@ -12,7 +12,7 @@ class Command
   char * name() { return m_cmdName; }
   bool setName(const char * newName);
   char * args() { return m_rawArgs; }
-  bool setArgconst char * newArgName, const char * newArgValue);
+  bool setArg(const char * newArgName, const char * newArgValue);
   char * raw() { return m_rawCmd; }
   bool setRaw(const char * newRaw);
 
