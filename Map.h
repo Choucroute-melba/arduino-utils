@@ -31,7 +31,7 @@ class Map
   bool remove(const TK key);
   bool contains(const TK key);
   TV const get(const TK key);
-  Tk const getKey(const TV value);
+  TK const getKey(const TV value);
   void set(const TK key, const TV value);
   void clear();
   const int size();
