@@ -63,12 +63,17 @@ bool Command::setName(const char * newName)
   return parse();
 }
 
-bool Command::setArg(const char * newArg)
+bool Command::setArg(const char * newArgName, const char * newArgValue)
 {
-  m_newRawArgs = strcpy(m_newRawArgs, m_rawArgs);
-  m_newRawArgsLength = strlen(m_newRawArgs) + strlen(newArg);
-  m_newRawArgs = strcat(m_newRawArgs, newArg);
-  return parse();
+  char * argNamePtr = strstr(m_rawArgs, newArgName);
+  if(argNamePtr == NULL)
+    return false;
+  {
+    m_newRawArgs = strcpy(m_newRawArgs, m_rawArgs);
+    m_newRawArgsLength = strlen(m_newRawArgs) + strlen(argNamePtr);
+    m_newRawArgs = strcat(m_newRawArgs, argNamePtr);
+    return parse();
+  }
 }
 
 bool Command::setRaw(const char * newRaw)
