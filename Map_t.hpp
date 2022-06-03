@@ -106,6 +106,19 @@ const TV Map<TK, TV>::get(const TK key)
 }
 
 template <typename TK, typename TV>
+const TK Map<TK, TV>::getKey(const TV value)
+{
+  for(int i = 0; i < m_size; i++)
+  {
+    if(m_pairs[i].value() == value)
+    {
+      return m_pairs[i].key();
+    }
+  }
+  return TK();
+}
+
+template <typename TK, typename TV>
 void Map<TK, TV>::set(const TK key, const TV value)
 {
   for(int i = 0; i < m_size; i++)
